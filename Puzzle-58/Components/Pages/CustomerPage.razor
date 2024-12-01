@@ -1,10 +1,6 @@
 ﻿@page "/customerpage"
 
-@if (AppState.CurrentClient == Client.Generic)
-{
-    <Puzzle_58.Clients.Generic.Generic/>
-}
-else if (AppState.CurrentClient == Client.Acme)
+@if (AppState.CurrentClient == Client.Acme)
 {
     <Puzzle_58.Clients.Acme.Acme/>
 }
@@ -14,7 +10,7 @@ else if (AppState.CurrentClient == Client.Contoso)
 }
 else
 {
-    <h3>Unknown Client</h3>
+    <h3>Please select a client</h3>
 }
 
 @code {

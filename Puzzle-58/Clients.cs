@@ -2,7 +2,7 @@
 
 public enum Client
 {
-	Generic,
+	None,
 	Acme,
 	Contoso
 }
