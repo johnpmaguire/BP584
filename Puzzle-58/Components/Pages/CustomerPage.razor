@@ -1,0 +1,25 @@
+﻿@page "/customerpage"
+
+@if (AppState.CurrentClient == Client.Generic)
+{
+    <Puzzle_58.Clients.Generic.Generic/>
+}
+else if (AppState.CurrentClient == Client.Acme)
+{
+    <Puzzle_58.Clients.Acme.Acme/>
+}
+else if (AppState.CurrentClient == Client.Contoso)
+{
+    <Puzzle_58.Clients.Contoso.Contoso />
+}
+else
+{
+    <h3>Unknown Client</h3>
+}
+
+@code {
+
+    [CascadingParameter]
+    public CascadingAppState AppState { get; set; }
+
+}
