@@ -1,8 +1,9 @@
 ﻿@using Components
 <h3>Acme Config Page</h3>
 
-@code {
+<p>@AcmeState.AcmeSpecificConfigState</p>
 
-    [CascadingParameter]
-    public CascadingAppState AppState { get; set; }
+@code {
+    [Inject]
+    public AcmeState AcmeState { get; set; }
 }

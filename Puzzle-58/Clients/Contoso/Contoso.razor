@@ -1,12 +1,9 @@
-﻿@using Components
+﻿@page "/contoso"
 
-<h3>Contoso Page</h3>
-
-Welcome to Contoso
+<h3>Contoso customer page</h3>
+<p>@ContosoState.ContosoSpecificCustomerPageState</p>
 
 @code {
-
-    [CascadingParameter]
-    public CascadingAppState AppState { get; set; }
-
+    [Inject]
+    public ContosoState ContosoState { get; set; }
 }

@@ -1,9 +1,9 @@
 ﻿@using Components
-
 <h3>Contoso Config Page</h3>
 
-@code {
+<p>@ContosoState.ContosoSpecificConfigState</p>
 
-    [CascadingParameter]
-    public CascadingAppState AppState { get; set; }
+@code {
+    [Inject]
+    public ContosoState ContosoState { get; set; }
 }

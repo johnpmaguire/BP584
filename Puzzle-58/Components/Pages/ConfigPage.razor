@@ -1,21 +1,28 @@
-﻿@page "/configpage"
+﻿   @page "/configpage"
 
-@if (AppState.CurrentClient == Client.Acme)
-{
-    <Puzzle_58.Clients.Acme.ConfigAcme />
-}
-else if (AppState.CurrentClient == Client.Contoso)
-{
-    <Puzzle_58.Clients.Contoso.ConfigContoso />
-}
-else
-{
-    <h3>Please select a client</h3>
-}
+   @if (AppState.CurrentClient == Client.Acme)
+   {
+       <Puzzle_58.Clients.Acme.ConfigAcme @ref="acmeConfigComponent" />
+   }
+   else if (AppState.CurrentClient == Client.Contoso)
+   {
+       <Puzzle_58.Clients.Contoso.ConfigContoso @ref="contosoConfigComponent" />
+   }
+   else
+   {
+       <h3>Please select a client</h3>
+   }
 
-@code {
+   @code {
+       [Inject]
+       public CascadingAppState AppState { get; set; }
 
-    [CascadingParameter]
-    public CascadingAppState AppState { get; set; }
+       private Puzzle_58.Clients.Acme.ConfigAcme acmeConfigComponent;
+       private Puzzle_58.Clients.Contoso.ConfigContoso contosoConfigComponent;
 
-}
+       [Inject]
+       public AcmeState AcmeState { get; set; }
+
+       [Inject]
+       public ContosoState ContosoState { get; set; }
+   }
